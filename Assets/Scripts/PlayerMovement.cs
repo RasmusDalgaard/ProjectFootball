@@ -29,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
 
         MovePlayer();
         MovePlayerCamera();
-
-        isGrounded = false;
     }
 
     private void MovePlayer()
@@ -41,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             PlayerBody.AddForce(Vector3.up * Jumpforce, ForceMode.Impulse);
+            isGrounded = false;
         }
     }
 
