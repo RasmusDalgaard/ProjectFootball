@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoccerBall : MonoBehaviour
+public class OnScore : MonoBehaviour
 {
     private Vector3 initialBallPosition;
     private Vector3 initialPlayerPosition;
