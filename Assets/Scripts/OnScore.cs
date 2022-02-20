@@ -39,7 +39,8 @@ public class OnScore : MonoBehaviour
             //Stop ball velocity
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            
+
+            //Add to text
             
         }
 
