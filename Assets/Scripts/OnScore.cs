@@ -15,7 +15,7 @@ public class OnScore : MonoBehaviour
     void Start()
     {
         ball = GameObject.Find("Ball");
-        player = GameObject.Find("PlayerBody");
+        player = GameObject.Find("FPSController");
         rb = ball.GetComponent<Rigidbody>();
 
         initialBallPosition = ball.transform.position;
