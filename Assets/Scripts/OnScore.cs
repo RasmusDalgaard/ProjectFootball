@@ -15,7 +15,7 @@ public class OnScore : MonoBehaviour
     void Start()
     {
         ball = GameObject.Find("Ball");
-        player = GameObject.Find("Player");
+        player = GameObject.Find("PlayerBody");
         rb = ball.GetComponent<Rigidbody>();
 
         initialBallPosition = ball.transform.position;
@@ -41,7 +41,7 @@ public class OnScore : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
 
             //Add to text
-            
+
         }
 
     }
