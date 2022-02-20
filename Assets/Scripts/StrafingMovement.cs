@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class StrafingMovement : MonoBehaviour
 {
-    private bool movingLeft;
-    private float speed;
-    private Transform playerPos;
-    public float moveSpeed;
+
+    public Transform[] target;
+    public float speed;
+
+    private int current;
 
 
     void Start()
     {
 
-        playerPos = GameObject.Find("GoalKeeper").transform;
 
     }
 
@@ -21,9 +21,12 @@ public class StrafingMovement : MonoBehaviour
     {
 
 
-        float move = moveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, playerPos.position, move);
-
+       if (transform.position != target[current].position)
+        {
+            Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed);
+            GetComponent<Rigidbody>().MovePosition(pos);
+        }
+            else current = (current + 1) % target.Length;
 
     }
 }
