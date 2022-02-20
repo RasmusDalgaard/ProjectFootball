@@ -8,7 +8,7 @@ public class StrafingMovement : MonoBehaviour
     public Transform[] target;
     public float speed;
 
-    private int current;
+    private int current = 0;
 
 
 
