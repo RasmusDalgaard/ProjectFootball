@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7228793366343195869}
   m_Layer: 0
-  m_Name: SoccerBall
+  m_Name: Football
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
