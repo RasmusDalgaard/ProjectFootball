@@ -4,31 +4,48 @@ using UnityEngine;
 
 public class SoccerBall : MonoBehaviour
 {
-
+    private Vector3 initialBallPosition;
+    private Vector3 initialPlayerPosition;
     private int Score = 0;
-    // Start is called before the first frame update
+
+    private GameObject ball;
+    private GameObject player;
+    private Rigidbody rb;
+
     void Start()
     {
-        
+        ball = GameObject.Find("Ball");
+        player = GameObject.Find("Player");
+        rb = ball.GetComponent<Rigidbody>();
+
+        initialBallPosition = ball.transform.position;
+        initialPlayerPosition = player.transform.position;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.gameObject.tag == "Goal")
+        if (col.gameObject.tag == "Goal")
         {
             Debug.Log("GOOOOAL!!!");
             Score++;
             Debug.Log("Score is: " + Score.ToString());
+
+            //Reset player position
+            player.transform.position = initialPlayerPosition;
+
+            //Reset ball position
+            ball.transform.position = initialBallPosition;
+
+            //Stop ball velocity
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            
+            
         }
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-
-
     }
-
 }
